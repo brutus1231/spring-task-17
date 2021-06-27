@@ -17,7 +17,9 @@ public class PersonBo {
     }
 
     public void save(PersonDto person) {
+        System.out.println("Próba zapisu osoby");
         if (!isPersonValid(person)) {
+            System.out.println("Walidacja osoby niepoprawna");
             return;
         }
         System.out.println("Zapisano osobę");
