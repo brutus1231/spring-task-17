@@ -2,6 +2,7 @@ package pl.sda.service;
 
 import org.springframework.stereotype.Component;
 import pl.sda.dto.PersonDto;
+import pl.sda.dto.PersonValidatorType;
 
 @Component
 public class PeselValidator implements FieldValidator {
@@ -13,5 +14,10 @@ public class PeselValidator implements FieldValidator {
             return false;
         }
         return pesel.length() == 11 && pesel.matches("^[0-9]+$");
+    }
+
+    @Override
+    public PersonValidatorType getType() {
+        return PersonValidatorType.PESEL;
     }
 }
